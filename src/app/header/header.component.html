@@ -1,0 +1,77 @@
+<!-- Image and text -->
+<!-- <nav class="navbar navbar-light r">
+    <a class="navbar-brand" href="#">
+      <h2>Notepad</h2>
+    </a>
+  </nav> -->
+  <!--Main Navigation-->
+<header>
+    <!-- Sidebar -->
+    <nav  id="sidebarMenu" class="collapse d-lg-block sidebar ">
+      <div >
+     
+        <div class="list-group list-group-flush mx-3 mt-4">
+          <span>
+            <p class="navbar-item">Categories<i class="fa-solid fa-arrows-rotate mx-2" (click)="getAllCategory()"></i></p>
+          </span>
+          
+           
+              <div style="display: flex;flex-direction: row;" *ngFor="let category of categories" class="mt-3">
+                 <div style="width: 200px;">
+                   <span>{{category.name}}</span>
+                 </div>
+                 <div style="display: flex;flex-direction: row;">
+                   <div>
+                    <i routerLink="starter/edit-category/{{category.id}}" style="cursor: pointer;" class="fa-solid fa-pen-to-square mx-3 "></i>
+                   </div>
+                  
+                 </div>
+              </div>
+
+            <!-- <button class="cata-btn mt-4" (click)="getAllCategory()">View Category<i class="fa-solid fa-eye text-dark mx-2"></i></button> -->
+
+           <button class="cata-btn mt-4"  routerLink="starter/add-category">Add category <i class="fa-solid fa-layer-group  text-dark"></i></button>
+
+          
+        </div>
+      </div>
+    </nav>
+    <!-- Sidebar -->
+  
+    <!-- Navbar -->
+    <nav id="main-navbar" class="navbar navbar-expand-lg  " style="height: 0px;" >
+      <!-- Container wrapper -->
+      <div class="container-fluid">
+        <!-- Toggle button -->
+        <!-- <button
+          class="navbar-toggler "
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#sidebarMenu"
+          aria-controls="sidebarMenu"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-bars"></i>
+        </button> -->
+        
+  
+        <!-- Brand -->
+       <h2 class="fixed-top m-3 heading"><i class="fa-solid fa-pen-nib"></i>Note <span>Pad</span></h2>
+        <!-- Search form -->
+       
+  
+        <!-- Right links -->
+        <ul class=" ms-auto d-flex flex-row">
+          <button routerLink="starter/add-notes" class="fixed-top ms-auto m-3 cata-btn-1">Add Notes <i class="fa-solid fa-pen "></i></button>
+        </ul>
+      </div>
+      <!-- Container wrapper -->
+    </nav>
+    <!-- Navbar -->
+  </header>
+  <!--Main Navigation-->
+  
+  <!--Main layout-->
+ 
+  <!--Main layout-->

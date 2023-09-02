@@ -1,0 +1,31 @@
+.container{
+    min-height: 100vh;
+    max-height: 100%;
+}
+img{
+    width: 100%;
+}
+button{
+    width: 250px;
+    height: 40px;
+    margin-left: 20px;
+    margin-top: 20px;
+    border: none;
+    background-color: black;
+    color: white;
+    font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border-radius: 2rem;
+}
+button:hover{
+    background-color: #ff7f11;
+    color: black;
+    transform: scale(110%);
+    transition: 0.4s ease;
+}
+@media screen and (max-width:501px) {
+   img{
+    margin-top: 200px;
+   }
+}

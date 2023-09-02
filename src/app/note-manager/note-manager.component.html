@@ -1,0 +1,60 @@
+
+
+<div class="container" id="#display-portion">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-10" style="position: relative;">
+          <div class="row search-portion">
+            <div class="col-md-6 text-center">
+              <input (keyup)="getKey($event)" type="text" placeholder="Search here"><i class="fa-solid fa-magnifying-glass mx-2"></i>
+
+            </div>
+            <div class="col-md-6 select-portion">
+              <select class="select" style="width: 200px;" [(ngModel)]="noteDetails.categoryId" id="" (input)="getCataId($event)" name="categoryId" aria-placeholder="sort" required>
+                <option value="" selected hidden disabled>{{noteDetails.categoryId}}</option>
+                <option value=" ">View All</option>
+                <option [value]="group.id" *ngFor="let group of categories">{{group.name}}</option>
+             </select>
+            </div>
+          </div>
+         
+            <div class="row">
+              
+          
+              <div class="col-md-12">
+                <div class="card mb-3 border-0" *ngFor="let notes of noteDetails|search:searchTerm:'title'|sort:cataKey:'categoryId'" >
+              
+                  <div class="row g-0" >
+                    <div class="col-md-4 image-portion">
+                      <img   [src]="notes.images" class="img-fluid" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body" >
+                        <h5 class="card-title">{{notes.title}}</h5>
+                        <p class="card-text">{{notes.overview}}</p>
+                        <p class="card-text"><small class="text-muted"></small></p>
+                       
+                        <button routerLink="/starter/view-note/{{notes.id}}">Read <i class="fa-brands fa-readme"></i></button>
+                        <button routerLink="/starter/edit-note/{{notes.id}}">Edit <i class="fa-solid fa-pen-to-square"></i></button>
+                        <button class="delete-btn"  (click)="deleteNotes(notes.id)">Delete <i class="fa-solid fa-trash"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+                <!-- <div  *ngIf="( noteDetails|search:searchTerm:'title'|sort:cataKey:'categoryId') as result" class="text-center mt-4">
+
+                  <div class="not-found-div" *ngIf="result.length == 0">
+                    <img class="not-found-img" src="https://emojis.wiki/emoji-pics/google/melting-face-google.png" alt="">
+                    <h2>NOT FOUND</h2>
+                  </div>  
+                
+                </div> -->
+
+
+                
+              </div>
+            </div>
+        </div>
+    </div>
+</div>

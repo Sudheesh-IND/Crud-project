@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-10">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="head-portion">
+                        <h2>{{viewData.title}}</h2>
+                       
+                        <h5>{{viewData.overview}}</h5>
+                        <button routerLink="/starter/edit-note/{{viewData.id}}">Edit</button>
+                    </div>
+                   
+                </div>
+                <div class="col-md-4">
+                    <div class="image-portion">
+                        <img [src]="viewData.images" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 50px;">
+                
+                <div class="col-md-12 d-flex flex-column">
+                    <p>{{viewData.notes}}</p>
+                    <div style="display: flex;flex-direction: row;justify-content: space-between;margin-top: 50px;">
+                        <div >
+                            <h4 class="mt-2" style="letter-spacing: 3px;">From {{cataData.name}}<i routerLink="/starter/edit-category/{{cataData.id}}" class="fa-solid fa-pen-to-square d-lg-none"></i></h4>
+                        </div>
+                        <div>
+                            <button class="ms-auto mt-2" style="margin-bottom: 50px;" routerLink="/starter/note-manager">Go Back</button>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

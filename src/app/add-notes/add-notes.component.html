@@ -1,0 +1,40 @@
+
+
+<div class="container">
+    <div class="row" style="margin-top: 70px;">
+        <div class="col-md-2"></div>
+        <div class="col-md-10">
+           
+
+            <div class="row">
+                <div class="col-md-6">
+                    <input style="margin-top: 20px;" [(ngModel)]="noteData.id" name="id"  type="text" placeholder="Unique Id" required>
+                    <select  [(ngModel)]="noteData.categoryId" name="categoryId" required>
+                        <option selected hidden disabled>{{noteData.categoryId}}</option>
+                        <option [value]="group.id" *ngFor="let group of groupData">{{group.name}}</option>
+                     </select> <i class="fa-solid fa-plus d-lg-none" routerLink="/starter/add-category"></i>
+                </div>
+                <div class="col-md-6">
+                    <input style="margin-top: 20px;" [(ngModel)]="noteData.title" name="title" type="text" placeholder="Note Title" required>
+                    <input [(ngModel)]="noteData.overview" name="overview" type="text" placeholder="Overview" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <input [(ngModel)]="noteData.images" name="images" type="text" placeholder="Thumbnail Url" required>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <textarea [(ngModel)]="noteData.notes" name="notes" id="" cols="30" rows="10" placeholder="Enter Notes" required></textarea>
+
+                </div>
+                <div style="margin-bottom: 70px;">
+                    <button  (click)="uploadNotes()" >SUBMIT</button>
+                    <button routerLink="/starter/note-manager">GO BACK</button>
+                   </div>
+            </div>
+        </div>
+    </div>
+</div>
